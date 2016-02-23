@@ -242,6 +242,8 @@ function create_config( )
     "meme",
     "xkcd",
     "wiki",
+    "supports",
+    "left",
     "webshot",
     "translate",
     "yoda",
