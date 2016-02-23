@@ -1,18 +1,17 @@
 do
 
 function run(msg, matches)
-  return 'NOD32-BOT v8'.. VERSION .. [[ 
+  return 'Telegram Bot '.. VERSION .. [[ 
  
-  Developer : @Behroozyaghi
+  Developer : @HanozamHamonam,@WoesDo
   
-  Channel : @Nod32team
+  channel : @SmokeUnion
   
-  Open git : https://github.com/BH-YAGHI/NOD32-BOT.git
+  open git : https://github.com/solomon121314/cd-TelePatch.git
   
-  NOD32 VERSION 8
+  ♻️TelePatch♻️ 4
   
-  All rights reserved.
-  __________________]]
+  All rights reserved.]]
 end
 
 return {
@@ -25,7 +24,3 @@ return {
 }
 
 end
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
