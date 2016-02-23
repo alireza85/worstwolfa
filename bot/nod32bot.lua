@@ -231,6 +231,11 @@ function create_config( )
     "inrealm",
     "invite",
     "leave_ban",
+    "bot_on_off",
+    "bot_manager",
+    "setrank",
+    "plugmanager",
+    "server_manager"
     "linkpv",
     "location",
     "lock_join",
@@ -245,7 +250,7 @@ function create_config( )
     "time",
     "version"
     },
-	    sudo_users = {158990680},--Sudo users
+	    sudo_users = {147797439},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[
@@ -321,7 +326,7 @@ ch: @Nod32team
 
 ]],
     help_text = [[
-NOD32 Commands list :
+⚜TeleRun⚜ Commands list :
  
 1-banhammer list ^
  
