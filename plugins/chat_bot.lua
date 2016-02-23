@@ -132,6 +132,16 @@ end
 if msg.text == "5" then
 	return "پنج کسلیس زیرآبی"
 end
+if msg.text == "بگو گه خوردم" and is_sudo(msg) then
+	return "گو خوردم بابااااا"
+end
+if msg.text == "دنیا کیرمه" and is_sudo(msg) then
+	return "دنیا کیرته بابا"
+end
+if msg.text == "دنیا کیرمونه" then
+	return "دنیا کیرتونه"
+end
+end
 end
 
 return {
@@ -180,6 +190,9 @@ return {
                 "^هاچ$",
                 "^گو نخور$",
                 "^کس عمت$",
+                "^دنیا کیرمونه$",
+                "^بگو گه خوردم$",
+                "^دنیا کیرمه$",
                 "^$",
 		}, 
 	run = run,
