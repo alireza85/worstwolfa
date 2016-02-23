@@ -31,7 +31,7 @@ if msg.text == "پژمان" then
 	return "واراتونو زدین"
 end
 if msg.text == "تله پتچ" then
-	return "http://s7.picofile.com/file/8238529884/%DB%B2%DB%B0%DB%B1%DB%B6%DB%B0%DB%B1%DB%B0%DB%B9_%DB%B2%DB%B0%DB%B1%DB%B7%DB%B3%DB%B6.jpg"
+	return "[image sticker.webp: type=image/webp size=712x712 size-34kib]"
 end
 if msg.text == "گو نخور" then
 	return "آدم تو رو میخوره؟"
@@ -142,15 +142,15 @@ return {
                 "^خوبی؟$",
                 "^اصل؟$",
                 "^5$",
-                "^$",
-                "^$",
-                "^$",
-                "^$",
-                "^$",
-                "^$",
-                "^$",
-                "^$",
-                "^$",
+                "^4$",
+                "^3$",
+                "^2$",
+                "^1$",
+                "^رگی$",
+                "^کونده$",
+                "^باشه$",
+                "^باش$",
+                "^تله پتچ$",
                 "^$",
                 "^$",
                 "^$",
