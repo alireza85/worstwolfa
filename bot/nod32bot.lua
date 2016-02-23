@@ -269,7 +269,7 @@ function create_config( )
     "setrank",
     "eur",
     "plugmanager",
-    "server_manager"
+    "server_manager",
     "giphy",
     "linkpv",
     "location",
