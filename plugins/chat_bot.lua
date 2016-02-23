@@ -99,7 +99,7 @@ end
 if msg.text == "کسلیس" then
 	return "کسلیس نگاییدم"
 end	
-if msg.text and is_sudo(msg) == "نفام خفه شو" then
+if msg.text == "نفام خفه شو" and is_sudo(msg) then
 	return "چشم بابا😔😞"	
 end
 if msg.text == "پسره علی" then
