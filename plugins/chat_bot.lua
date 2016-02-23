@@ -31,7 +31,7 @@ if msg.text == "پژمان" then
 	return "واراتونو زدین"
 end
 if msg.text == "تله پتچ" then
-	return "[image sticker.webp: type=image/webp size=712x712 size-34kib]"
+	return "http://uupload.ir/files/yaan_tele-patch-86612633.jpg"
 end
 if msg.text == "گو نخور" then
 	return "آدم تو رو میخوره؟"
@@ -99,7 +99,7 @@ end
 if msg.text == "کسلیس" then
 	return "کسلیس نگاییدم"
 end	
-if msg.text == "نفام خفه شو" then
+if msg.text and id_sudo(msg) == "نفام خفه شو" then
 	return "چشم بابا😔😞"	
 end
 if msg.text == "پسره علی" then
@@ -151,8 +151,8 @@ return {
                 "^باشه$",
                 "^باش$",
                 "^تله پتچ$",
-                "^$",
-                "^$",
+                "^پسره علی$",
+                "^نفام خفه شو$",
                 "^$",
                 "^$",
                 "^$",
