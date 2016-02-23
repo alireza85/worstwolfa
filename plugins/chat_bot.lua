@@ -142,7 +142,6 @@ if msg.text == "دنیا کیرمونه" then
 	return "دنیا کیرتونه"
 end
 end
-end
 
 return {
 	description = "Chat With Robot Server", 
