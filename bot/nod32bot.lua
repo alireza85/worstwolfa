@@ -544,7 +544,7 @@ ch: @Nod32team
 !feedback (text)
 ارسال نظرات به سازنده
 
-Designer : @HanozamHamonam
+Designer🎨 : @HanozamHamonam
 
 you can use both "/" and "!" 
 .شما میتوانید از ! و / استفاده کنید
