@@ -153,6 +153,9 @@ end
 if msg.text == "گربه" then
 	return "گربمم مثل من شاکِسه"
 end
+if msg.text == "تو خفه" and is_sudo(msg) then
+	return "چشم بابا"
+end
 end
 
 return {
@@ -209,6 +212,7 @@ return {
                 "^سگ$",
                 "^گربه$",
                 "^$",
+                "^تو خفه$",
 		}, 
 	run = run,
     --privileged = true,
