@@ -52,7 +52,7 @@ local function res_user_callback(extra, success, result) -- آیدی <username> 
   end
 end
 
-local function action_by_id(extra, success, result)  -- /info <ID> function
+local function action_by_id(extra, success, result)  -- آیدی <ID> function
  if success == 1 then
  if result.username then
    Username = '@'..result.username
@@ -91,7 +91,7 @@ local function action_by_id(extra, success, result)  -- /info <ID> function
   end
 end
 
-local function action_by_reply(extra, success, result)-- (reply) /info  function
+local function action_by_reply(extra, success, result)-- (reply) آیدی  function
 		if result.from.username then
 		   Username = '@'..result.from.username
 		   else
@@ -129,11 +129,11 @@ end
 
 local function action_by_reply2(extra, success, result)
 local value = extra.value
-setrank(result, result.from.id, value)
+تغییر به(result, result.from.id, value)
 end
 
 local function run(msg, matches)
- if matches[1]:lower() == 'setrank' then
+ if matches[1]:lower() == 'تغییر به' then
   local hash = 'usecommands:'..msg.from.id..':'..msg.to.id
   redis:incr(hash)
   if not is_sudo(msg) then
@@ -147,12 +147,12 @@ local function run(msg, matches)
   else
   local name = string.sub(matches[2], 1, 50)
   local value = string.sub(matches[3], 1, 1000)
-  local text = setrank(msg, name, value)
+  local text = تغییر به(msg, name, value)
 
   return text
   end
   end
- if matches[1]:lower() == 'info' and not matches[2] then
+ if matches[1]:lower() == 'آیدی' and not matches[2] then
   local receiver = get_receiver(msg)
   local Reply = msg.reply_id
   if msg.reply_id then
@@ -200,7 +200,7 @@ local function run(msg, matches)
     return send_msg(receiver, text, ok_cb, true)
     end
   end
-  if matches[1]:lower() == 'info' and matches[2] then
+  if matches[1]:lower() == 'آیدی' and matches[2] then
    local user = matches[2]
    local chat2 = msg.to.id
    local receiver = get_receiver(msg)
