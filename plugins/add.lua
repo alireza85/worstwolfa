@@ -33,3 +33,13 @@
       if not msg.service then
         return "Are you trying to troll me?"
       end
+
+return {
+  patterns = {
+   "^[!/](add)$",
+  "^[!/](rem)$",
+  "^!!tgservice (.+)$",
+    },
+  run = run
+}
+end
