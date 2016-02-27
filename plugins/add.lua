@@ -1,39 +1,187 @@
- if matches[1] == 'add' and not matches[2] then
-    if is_realm(msg) then
-       return 'Error: Already a realm.'
-    end
-    print("group "..msg.to.print_name.."("..msg.to.id..") added")
-    return modadd(msg)
-  end
-   if matches[1] == 'add' and matches[2] == 'realm' then
-    if is_group(msg) then
-       return 'Error: Already a group.'
-    end
-    print("group "..msg.to.print_name.."("..msg.to.id..") added as a realm")
-    return realmadd(msg)
-  end
-  if matches[1] == 'rem' and not matches[2] then
-    print("group "..msg.to.print_name.."("..msg.to.id..") removed")
-    return modrem(msg)
-  end
-  if matches[1] == 'rem' and matches[2] == 'realm' then
-    print("group "..msg.to.print_name.."("..msg.to.id..") removed as a realm")
-    return realmrem(msg)
-  end
-  if matches[1] == 'chat_created' and msg.from.id == 0 and group_type == "group" then
-    return automodadd(msg)
-  end
-  if matches[1] == 'chat_created' and msg.from.id == 0 and group_type == "realm" then
-    return autorealmadd(msg)
-  end
+do
 
-  if msg.to.id and data[tostring(msg.to.id)] then
-    local settings = data[tostring(msg.to.id)]['settings']
-    if matches[1] == 'chat_add_user' then
-      if not msg.service then
-        return "Are you trying to troll me?"
+-- Check Member
+local function check_member_autorealm(cb_extra, success, result)
+  local receiver = cb_extra.receiver
+  local data = cb_extra.data
+  local msg = cb_extra.msg
+  for k,v in pairs(result.members) do
+    local member_id = v.id
+    if member_id ~= our_id then
+      -- Group configuration
+      data[tostring(msg.to.id)] = {
+        group_type = 'Realm',
+        settings = {
+          set_name = string.gsub(msg.to.print_name, '_', ' '),
+          lock_name = 'yes',
+          lock_photo = 'no',
+          lock_member = 'no',
+          flood = 'yes'
+        }
+      }
+      save_data(_config.moderation.data, data)
+      local realms = 'realms'
+      if not data[tostring(realms)] then
+        data[tostring(realms)] = {}
+        save_data(_config.moderation.data, data)
       end
-
+      data[tostring(realms)][tostring(msg.to.id)] = msg.to.id
+      save_data(_config.moderation.data, data)
+      return send_large_msg(receiver, 'Welcome to your new realm !')
+    end
+  end
+end
+local function check_member_realm_add(cb_extra, success, result)
+  local receiver = cb_extra.receiver
+  local data = cb_extra.data
+  local msg = cb_extra.msg
+  for k,v in pairs(result.members) do
+    local member_id = v.id
+    if member_id ~= our_id then
+      -- Group configuration
+      data[tostring(msg.to.id)] = {
+        group_type = 'Realm',
+        settings = {
+          set_name = string.gsub(msg.to.print_name, '_', ' '),
+          lock_name = 'yes',
+          lock_photo = 'no',
+          lock_member = 'no',
+          flood = 'yes'
+        }
+      }
+      save_data(_config.moderation.data, data)
+      local realms = 'realms'
+      if not data[tostring(realms)] then
+        data[tostring(realms)] = {}
+        save_data(_config.moderation.data, data)
+      end
+      data[tostring(realms)][tostring(msg.to.id)] = msg.to.id
+      save_data(_config.moderation.data, data)
+      return send_large_msg(receiver, 'Realm has been added!')
+    end
+  end
+end
+function check_member_group(cb_extra, success, result)
+  local receiver = cb_extra.receiver
+  local data = cb_extra.data
+  local msg = cb_extra.msg
+  for k,v in pairs(result.members) do
+    local member_id = v.id
+    if member_id ~= our_id then
+      -- Group configuration
+      data[tostring(msg.to.id)] = {
+        group_type = 'Group',
+        moderators = {},
+        set_owner = member_id ,
+        settings = {
+          set_name = string.gsub(msg.to.print_name, '_', ' '),
+          lock_name = 'yes',
+          lock_photo = 'no',
+          lock_member = 'no',
+          flood = 'yes',
+        }
+      }
+      save_data(_config.moderation.data, data)
+      local groups = 'groups'
+      if not data[tostring(groups)] then
+        data[tostring(groups)] = {}
+        save_data(_config.moderation.data, data)
+      end
+      data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
+      save_data(_config.moderation.data, data)
+      return send_large_msg(receiver, 'You have been promoted as the owner.')
+    end
+  end
+end
+local function check_member_modadd(cb_extra, success, result)
+  local receiver = cb_extra.receiver
+  local data = cb_extra.data
+  local msg = cb_extra.msg
+  for k,v in pairs(result.members) do
+    local member_id = v.id
+    if member_id ~= our_id then
+      -- Group configuration
+      data[tostring(msg.to.id)] = {
+        group_type = 'Group',
+        moderators = {},
+        set_owner = member_id ,
+        settings = {
+          set_name = string.gsub(msg.to.print_name, '_', ' '),
+          lock_name = 'yes',
+          lock_photo = 'no',
+          lock_member = 'no',
+          flood = 'yes',
+        }
+      }
+      save_data(_config.moderation.data, data)
+      local groups = 'groups'
+      if not data[tostring(groups)] then
+        data[tostring(groups)] = {}
+        save_data(_config.moderation.data, data)
+      end
+      data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
+      save_data(_config.moderation.data, data)
+      return send_large_msg(receiver, 'Group is added and you have been promoted as the owner ')
+    end
+  end
+end
+local function automodadd(msg)
+  local data = load_data(_config.moderation.data)
+  if msg.action.type == 'chat_created' then
+    receiver = get_receiver(msg)
+    chat_info(receiver, check_member_group,{receiver=receiver, data=data, msg = msg})
+  end
+end
+local function autorealmadd(msg)
+  local data = load_data(_config.moderation.data)
+  if msg.action.type == 'chat_created' then
+    receiver = get_receiver(msg)
+    chat_info(receiver, check_member_autorealm,{receiver=receiver, data=data, msg = msg})
+  end
+end
+local function check_member_realmrem(cb_extra, success, result)
+  local receiver = cb_extra.receiver
+  local data = cb_extra.data
+  local msg = cb_extra.msg
+  for k,v in pairs(result.members) do
+    local member_id = v.id
+    if member_id ~= our_id then
+      -- Realm configuration removal
+      data[tostring(msg.to.id)] = nil
+      save_data(_config.moderation.data, data)
+      local realms = 'realms'
+      if not data[tostring(realms)] then
+        data[tostring(realms)] = nil
+        save_data(_config.moderation.data, data)
+      end
+      data[tostring(realms)][tostring(msg.to.id)] = nil
+      save_data(_config.moderation.data, data)
+      return send_large_msg(receiver, 'Realm has been removed!')
+    end
+  end
+end
+local function check_member_modrem(cb_extra, success, result)
+  local receiver = cb_extra.receiver
+  local data = cb_extra.data
+  local msg = cb_extra.msg
+  for k,v in pairs(result.members) do
+    local member_id = v.id
+    if member_id ~= our_id then
+      -- Group configuration removal
+      data[tostring(msg.to.id)] = nil
+      save_data(_config.moderation.data, data)
+      local groups = 'groups'
+      if not data[tostring(groups)] then
+        data[tostring(groups)] = nil
+        save_data(_config.moderation.data, data)
+      end
+      data[tostring(groups)][tostring(msg.to.id)] = nil
+      save_data(_config.moderation.data, data)
+      return send_large_msg(receiver, 'Group has been removed')
+    end
+  end
+end
+--End Check Member
 return {
   patterns = {
    "^[!/](add)$",
