@@ -228,12 +228,12 @@ end
 return {
   description = 'Know your information or the info of a chat members.',
   usage = {
-	'آیدی: Return your info and the chat info if you are in one.',
-	'(Reply)آیدی: Return info of replied user if used by reply.',
-	'آیدی <id>: Return the info\'s of the <id>.',
-	'آیدی @<user_name>: Return the member @<user_name> information from the current chat.',
-	'تغییر به <userid> <rank>: change members rank.',
-	'(Reply)تغییر به <rank>: change members rank.',
+	'!info: Return your info and the chat info if you are in one.',
+	'(Reply)!info: Return info of replied user if used by reply.',
+	'!info <id>: Return the info\'s of the <id>.',
+	'!info @<user_name>: Return the member @<user_name> information from the current chat.',
+	'!setrank <userid> <rank>: change members rank.',
+	'(Reply)!setrank <rank>: change members rank.',
   },
   patterns = {
 	"^[](آیدی)$",
