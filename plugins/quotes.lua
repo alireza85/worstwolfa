@@ -49,9 +49,9 @@ function get_quote(msg)
 end
 
 function run(msg, matches)
-    if string.match(msg.text, "ذخیره $") then
+    if string.match(msg.text, "save$") then
         return get_quote(msg)
-    elseif string.match(msg.text, "دریافت (.+)$") then
+    elseif string.match(msg.text, "add (.+)$") then
         quotes_table = read_quotes_file()
         return save_quote(msg)
     end
@@ -61,12 +61,12 @@ return {
     description = "Save quote",
     description = "Quote plugin, you can create and retrieve random quotes",
     usage = {
-        "!addquote [msg]",
-        "!quote",
+        "add [msg]",
+        "save",
     },
     patterns = {
-        "^ذخیره (.+)$",
-        "^دریافت $",
+        "^!addquote (.+)$",
+        "^!quote$",
     },
     run = run
 }
