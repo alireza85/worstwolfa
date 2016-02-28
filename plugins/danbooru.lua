@@ -24,11 +24,11 @@ local function run(msg, matches)
   else
     url = url .. URL_POP
 
-    if matches[1] == "d" then
+    if matches[1] == "1" then
       url = url .. scale_day
-    elseif matches[1] == "w" then
+    elseif matches[1] == "2" then
       url = url .. scale_week
-    elseif matches[1] == "m" then
+    elseif matches[1] == "3" then
       url = url .. scale_month
     end
   end
