@@ -15,7 +15,7 @@ end
 
 return {
   patterns = {
-    "^[/!]([Ll]inkpv)$"
+    "^[](لینک پیوی)$"
   },
   run = run
 }
