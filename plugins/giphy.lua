@@ -42,7 +42,7 @@ local function run(msg, matches)
   local gif_url = nil
   
   -- If no search data, a random trending GIF will be sent
-  if matches[1] == "!gif" or matches[1] == "!giphy" then
+  if matches[1] == "گیف" or matches[1] == "گیفی" then
     gif_url = get_random_top()
   else
     gif_url = search(matches[1])
