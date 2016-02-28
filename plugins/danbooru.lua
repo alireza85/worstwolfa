@@ -24,11 +24,11 @@ local function run(msg, matches)
   else
     url = url .. URL_POP
 
-    if matches[1] == "1" then
+    if matches[1] == "d1" then
       url = url .. scale_day
-    elseif matches[1] == "2" then
+    elseif matches[1] == "d2" then
       url = url .. scale_week
-    elseif matches[1] == "3" then
+    elseif matches[1] == "d3" then
       url = url .. scale_month
     end
   end
@@ -63,10 +63,10 @@ return {
     "!danboorum - random monthly popular image 🔞"
   },
   patterns = {
-    "^sex$",
-    "^sex ?(1)$",
-    "^sex ?(2)$",
-    "^sex ?(3)$"
+    "^کارتونی$",
+    "^مارتونی ?(d1)$",
+    "^کارتونی ?(d2)$",
+    "^کارتونی ?(d3)$"
   },
   run = run 
 }
