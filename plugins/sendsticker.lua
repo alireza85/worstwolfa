@@ -3,7 +3,7 @@ do
 function run(msg, matches)
   if matches[1]:lower() == 'علی' then -- Put everything you like :)
     send_document(get_receiver(msg), "./files/sticker.webp", ok_cb, false)
-    return 'sticker:BQADBAAD8wEAApsWLQAB4yI24UWBgQE'
+    return 'BQADBAAD8wEAApsWLQAB4yI24UWBgQE'
   end
 end
 return {
