@@ -14,7 +14,7 @@ end
 
 local function returnids(cb_extra, success, result)
   local receiver = cb_extra.receiver
-  local chat_id = "ایدی گروه"..result.id
+  local chat_id = "ایدی گروه "..result.id
   local chatname = result.print_name
 
   local text = 'IDs for chat '..chatname
@@ -22,7 +22,7 @@ local function returnids(cb_extra, success, result)
   ..'There are '..result.members_num..' members'
   ..'\n---------\n'
   for k,v in pairs(result.members) do
-    text = text .. v.print_name .. " (ایدی شما" .. v.id .. ")\n"
+    text = text .. v.print_name .. " (ایدی شما " .. v.id .. ")\n"
   end
   send_large_msg(receiver, text)
 end
@@ -30,15 +30,15 @@ end
 local function run(msg, matches)
   local receiver = get_receiver(msg)
   if matches[1] == "ایدی" then
-    local text = user_print_name(msg.from) .. ' (ایدی شما' .. msg.from.id .. ')'
+    local text = user_print_name(msg.from) .. ' (ایدی شما ' .. msg.from.id .. ')'
     if is_chat_msg(msg) then
-      text = text .. "\nYou are in group " .. user_print_name(msg.to) .. " (ایدی گروه" .. msg.to.id  .. ")"
+      text = text .. "\nYou are in group " .. user_print_name(msg.to) .. " (ایدی گروه " .. msg.to.id  .. ")"
     end
     return text
   elseif matches[1] == "chat" then
     -- !ids? (chat) (%d+)
     if matches[2] and is_sudo(msg) then
-      local chat = 'ایدی گروه'..matches[2]
+      local chat = 'ایدی گروه '..matches[2]
       chat_info(chat, returnids, {receiver=receiver})
     else
       if not is_chat_msg(msg) then
