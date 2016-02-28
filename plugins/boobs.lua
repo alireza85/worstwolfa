@@ -40,11 +40,11 @@ end
 local function run(msg, matches)
   local url = nil
   
-  if matches[1] == "!boobs" then
+  if matches[1] == "ممه" then
     url = getRandomBoobs()
   end
 
-  if matches[1] == "!butts" then
+  if matches[1] == "کون" then
     url = getRandomButts()
   end
 
@@ -52,25 +52,21 @@ local function run(msg, matches)
     local receiver = get_receiver(msg)
     send_photo_from_url(receiver, url)
   else
-    return 'Error getting boobs/butts for you, please try again later.' 
+    return 'Error getting کون/ممه for you, please try again later.' 
   end
 end
 
 return {
   description = "Gets a random boobs or butts pic", 
   usage = {
-    "!boobs: Get a boobs NSFW image. 🔞",
-    "!butts: Get a butts NSFW image. 🔞"
+    "ممه: Get a boobs NSFW image. 🔞",
+    "کون: Get a butts NSFW image. 🔞"
   },
   patterns = {
-    "^!boobs$",
-    "^!butts$"
+    "^ممه$",
+    "^کون$"
   }, 
   run = run 
 }
 
 end
---Copyright; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
