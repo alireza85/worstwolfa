@@ -8,7 +8,7 @@ end
 local function run(msg, matches)
   local user = 147797439
 
-  if matches[1] == "support" then
+  if matches[1] == "ساپورتس" then
     user = 'user#id'..user
   end
 
