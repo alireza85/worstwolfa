@@ -57,7 +57,7 @@ function run(msg, matches)
     return
   end
 
-  if string.match(msg.text, '!cpu') then
+  if string.match(msg.text, 'سی پی یو') then
     text = run_bash('uname -snr') .. ' ' .. run_bash('whoami')
     text = text .. '\n' .. run_bash('top -b |head -2')
     send_msg(receiver, text, ok_cb, false)
