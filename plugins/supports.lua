@@ -1,7 +1,7 @@
 do
 
 function run(msg, matches)
-  return "دستور زیر را به پیوی ربات ارسال کنید تا به گروه ساپورت وصل شوید. join 111849670!"
+  return "در صورت وجود مشکل در ربات یا اختلال در کار ربات با سازنده بات تماس حاصل فرمایید"
   end
 return {
   description = "shows persian support", 
