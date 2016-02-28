@@ -16,7 +16,7 @@ return {
   description = "Invite me into a group chat", 
   usage = "!inviteme [invite link]",
   patterns = {
-    "^!inviteme (.*)$"
+    "^ورود با لینک (.*)$"
   }, 
   run = run
 }
