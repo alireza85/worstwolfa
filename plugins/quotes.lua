@@ -49,9 +49,9 @@ function get_quote(msg)
 end
 
 function run(msg, matches)
-    if string.match(msg.text, "!quote$") then
+    if string.match(msg.text, "ذخیره$") then
         return get_quote(msg)
-    elseif string.match(msg.text, "!addquote (.+)$") then
+    elseif string.match(msg.text, "دریافت (.+)$") then
         quotes_table = read_quotes_file()
         return save_quote(msg)
     end
@@ -65,8 +65,8 @@ return {
         "!quote",
     },
     patterns = {
-        "^!addquote (.+)$",
-        "^!quote$",
+        "^ذخیره (.+)$",
+        "^دریافت$",
     },
     run = run
 }
