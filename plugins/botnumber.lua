@@ -6,7 +6,7 @@ end
 
 return {
 patterns = {
-"^!botnumber$"
+"^شماره ی ربات$"
 
 },
 run = run
