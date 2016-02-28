@@ -15,13 +15,9 @@ end
 
 return {
   patterns = {
-    "^[](لینک پیوی)$"
+    "^[/!]([Ll]inkpv)$"
   },
   run = run
 }
 
 end
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
