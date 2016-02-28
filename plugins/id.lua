@@ -14,7 +14,7 @@ end
 
 local function returnids(cb_extra, success, result)
   local receiver = cb_extra.receiver
-  local chat_id = "chat#id "..result.id
+  local chat_id = "chat#id"..result.id
   local chatname = result.print_name
 
   local text = 'IDs for chat '..chatname
@@ -22,17 +22,17 @@ local function returnids(cb_extra, success, result)
   ..'There are '..result.members_num..' members'
   ..'\n---------\n'
   for k,v in pairs(result.members) do
-    text = text .. v.print_name .. " (user#id " .. v.id .. ")\n"
+    text = text .. v.print_name .. " (user#id" .. v.id .. ")\n"
   end
   send_large_msg(receiver, text)
 end
 
 local function run(msg, matches)
   local receiver = get_receiver(msg)
-  if matches[1] == "!id" then
-    local text = user_print_name(msg.from) .. ' (user#id ' .. msg.from.id .. ')'
+  if matches[1] == "ایدی" then
+    local text = user_print_name(msg.from) .. ' (user#id' .. msg.from.id .. ')'
     if is_chat_msg(msg) then
-      text = text .. "\nYou are in group " .. user_print_name(msg.to) .. " (chat#id " .. msg.to.id  .. ")"
+      text = text .. "\nYou are in group " .. user_print_name(msg.to) .. " (chat#id" .. msg.to.id  .. ")"
     end
     return text
   elseif matches[1] == "chat" then
@@ -115,14 +115,14 @@ end
 return {
   description = "Know your id or the id of a chat members.",
   usage = {
-    "!id: Return your ID and the chat id if you are in one.",
+    "ایدی: Return your ID and the chat id if you are in one.",
     "!ids chat: Return the IDs of the current chat members.",
     "!ids chat <chat_id>: Return the IDs of the <chat_id> members.",
     "!id member @<user_name>: Return the member @<user_name> ID from the current chat",
     "!id members name <text>: Search for users with <text> on first_name, print_name or username on current chat"
   },
   patterns = {
-    "^!id$",
+    "^ایدی$",
     "^!ids? (chat) (%d+)$",
     "^!ids? (chat)$",
     "^!id (member) (@)(.+)",
