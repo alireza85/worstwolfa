@@ -68,9 +68,9 @@ return {
     ' !invite [id|user_name|name]'
   },
   patterns = {
-    "^!invite$",
-    "^!invite (.*)$",
-    "^!invite (%d+)$"
+    "^دعوت$",
+    "^دعوت (.*)$",
+    "^دعوت (%d+)$"
   },
   run = run,
   privileged = true
