@@ -57,11 +57,11 @@ end
 local function run(msg, matches)
 	local receiver = get_receiver(msg)
 	-- Enable a channel
-	if matches[1] == 'enable' then
+	if matches[1] == '+' then
 		return enable_channel(receiver)
 	end
 	-- Disable a channel
-	if matches[1] == 'disable' then
+	if matches[1] == '-' then
 		return disable_channel(receiver)
 	end
 end
@@ -72,8 +72,8 @@ return {
 		"!channel enable: enable current channel",
 		"!channel disable: disable current channel" },
 	patterns = {
-		"^!channel? (enable)",
-		"^!channel? (disable)" }, 
+		"^چنل? (+)",
+		"^چنل? (-)" }, 
 	run = run,
 	privileged = true,
 	pre_process = pre_process
