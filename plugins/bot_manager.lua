@@ -119,7 +119,7 @@ local function run(msg,matches)
       		end
       	end
     end
-    if matches[1] == "تغییر عکس ربات" then
+    if matches[1] == "setbotphoto" then
     	redis:set("bot:photo", "waiting")
     	return 'عکس رباتو بفرست بیاد'
     end
@@ -134,18 +134,18 @@ local function run(msg,matches)
     	end
     	return
     end
-    if matches[1] == "پی ام" then
+    if matches[1] == "pm" then
     	send_large_msg("user#id"..matches[2],matches[3])
     	return "پیام شما از طریق پیوی ربات ارسال شد"
     end
-    if matches[1] == "بلاک" then
+    if matches[1] == "block" then
     	if is_admin2(matches[2]) then
     		return "شما نمیتوانید ادمین را بلاک کنید"
     	end
     	block_user("user#id"..matches[2],ok_cb,false)
     	return "یوزر مورد نظر از ربات بلاک شد"
     end
-    if matches[1] == "حذف بلاک" then
+    if matches[1] == "unblock" then
     	unblock_user("user#id"..matches[2],ok_cb,false)
     	return "یوزر انبلاک شد"
     end
@@ -153,41 +153,37 @@ local function run(msg,matches)
     	local hash = parsed_url(matches[2])
     	import_chat_link(hash,ok_cb,false)
     end
-    if matches[1] == "مخاطبین" then
+    if matches[1] == "contactlist" then
       get_contact_list(get_contact_list_callback, {target = msg.from.id})
       return "I've sent contact list with both json and text format to your private"
     end
-    if matches[1] == "حذف مخاطب" then
+    if matches[1] == "delcontact" then
       del_contact("user#id"..matches[2],ok_cb,false)
       return "User "..matches[2].." removed from contact list"
     end
-    if matches[1] == "دیالگ" then
+    if matches[1] == "dialoglist" then
       get_dialog_list(get_dialog_list_callback, {target = msg.from.id})
       return "I've sent dialog list with both json and text format to your private"
     end
-    if matches[1] == "کیست؟" then
+    if matches[1] == "whois" then
       user_info("user#id"..matches[2],user_info_callback,{msg=msg})
     end
     return
 end
 return {
   patterns = {
-	"^[](پی ام) (%d+) (.*)$",
-	"^[](import) (.*)$",
-	"^[](حذف بلاک) (%d+)$",
-	"^[](بلاک) (%d+)$",
-	"^[](markread) (on)$",
-	"^[](markread) (off)$",
-	"^[](تغییر عکس ربات)$",
+	"^[!/](pm) (%d+) (.*)$",
+	"^[!/](import) (.*)$",
+	"^[!/](unblock) (%d+)$",
+	"^[!/](block) (%d+)$",
+	"^[!/](markread) (on)$",
+	"^[!/](markread) (off)$",
+	"^[!/](setbotphoto)$",
 	"%[(photo)%]",
-	"^[](مخاطبین)$",
-	"^[](دیالگ)$",
-	"^[](حذف مخاطب) (%d+)$",
-	"^[](کیست؟) (%d+)$"
+	"^[!/](contactlist)$",
+	"^[!/](dialoglist)$",
+	"^[!/](delcontact) (%d+)$",
+	"^[!/](whois) (%d+)$"
   },
   run = run,
 }
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
