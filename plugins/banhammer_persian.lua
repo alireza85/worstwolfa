@@ -216,7 +216,7 @@ local function run(msg, matches)
 	end
  end
 
-if matches[1]:lower() == 'حذف' then
+if matches[1]:lower() == 'اخراج' then
     if type(msg.reply_id)~="nil" and is_momod(msg) then
       if is_admin(msg) then
         local msgr = get_message(msg.reply_id,Kick_by_reply_admins, false)
@@ -243,7 +243,7 @@ if matches[1]:lower() == 'حذف' then
 	else
 		local cbres_extra = {
 			chat_id = msg.to.id,
-			get_cmd = 'حذف',
+			get_cmd = 'اخراج',
 			from_id = msg.from.id
 		}
 		local username = matches[2]
