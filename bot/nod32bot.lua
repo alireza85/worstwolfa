@@ -438,8 +438,27 @@ sodu : @behrooZyaghi
 19- شات از سفحه 🗾
 20- اخبار هکران 👺😈
 
+firs page
+
+
+
 👾👾👽👽👽🎭🎭🕹🕹💀💀👺👺👹👹
 
+ کنترول ربات
+1- تله پتچ ✅
+2- سی پی یو 👾
+3- ورژن 👽
+4- ساپورت 🏁
+5- ساپورتس ➿
+6- !bot on 👽
+7 -!bot off 💀
+8- !setbotphoto 🗻
+9- !contactlist ✌🏻
+10- !dialoglist 🗣
+11- !delcontact 🆔
+12- !whois ⁉️
+🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿
+Designer🎨 : The Worst😍
 ]],
     help_text = [[
 ⚜TelePatch⚜ دستورات ربات :
@@ -582,8 +601,27 @@ sodu : @behrooZyaghi
 19- شات از سفحه 🗾
 20- اخبار هکران 👺😈
 
+second page
+
+
+
 👾👾👽👽👽🎭🎭🕹🕹💀💀👺👺👹👹
 
+ کنترول ربات
+1- تله پتچ ✅
+2- سی پی یو 👾
+3- ورژن 👽
+4- ساپورت 🏁
+5- ساپورتس ➿
+6- !bot on 👽
+7 -!bot off 💀
+8- !setbotphoto 🗻
+9- !contactlist ✌🏻
+10- !dialoglist 🗣
+11- !delcontact 🆔
+12- !whois ⁉️
+🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿🌿
+Designer🎨 : The Worst😍
 ]]
   }
   serialize_to_file(config, './data/config.lua')
