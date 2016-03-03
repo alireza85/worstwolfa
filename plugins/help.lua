@@ -1,7 +1,7 @@
 do
 
 function run(msg, matches)
-  return 'Telegram Bot '.. VERSION .. [[ 
+  return '🌿TelePatch🌿 '.. VERSION .. [[ 
  
  کنترول ربات
 1- تله پتچ ✅
