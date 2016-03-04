@@ -2,6 +2,7 @@
 local function run(msg)
 if msg.text == "سلام" then
 	return "سلام"
+end
 if msg.text == "امید" then
 	return "با امید لفتی کار داری؟"
 end
