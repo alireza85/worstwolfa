@@ -7,7 +7,7 @@ function run(msg, matches)
   
   channel : @SmokeUnion
   
-  open git : https://github.com/solomon121314/cd-TelePatch.git
+  open git : https://github.com/***/***TelePatch.git
   
   ♻️TelePatch♻️ 4
   
