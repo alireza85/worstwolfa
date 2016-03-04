@@ -141,6 +141,9 @@ end
 if msg.text == "دنیا کیرمونه" then
 	return "دنیا کیرتونه"
 end
+if msg.text == "پسرم" and is_sudo(msg) then
+	return "جونم بابایی"
+end
 if msg.text == "شاکِس" then
 	return "رع کلک من ک میدونم با کی کار داری"
 end
@@ -208,6 +211,7 @@ return {
                 "^پرویزز$",
                 "^سگ$",
                 "^گربه$",
+                "^پسرم$",
                 "^$",
 		}, 
 	run = run,
