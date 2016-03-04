@@ -159,7 +159,7 @@ end
 if msg.text == "ن" then
 	return "نعیم . نگین و نیّره"
 end
-if msg.text == "امید1" then
+if msg.text == "امید 1" then
 	return "با نیره کاری داری؟!"
 end
 if msg.text == "گربه" then
@@ -223,7 +223,7 @@ return {
                 "^پسرم$",
                 "^امید$",
                 "^ن$",
-                "^امید1$",
+                "^امید 1$",
                 "^$",
 		}, 
 	run = run,
