@@ -156,6 +156,12 @@ end
 if msg.text == "سگ" then
 	return "عع من شبا با سگم میخوابم"
 end
+if msg.text == "ن" then
+	return "نعیم . نگین و نیّره"
+end
+if msg.text == "امید1" then
+	return "با نیره کاری داری؟!"
+end
 if msg.text == "گربه" then
 	return "گربمم مثل من شاکِسه"
 end
@@ -216,6 +222,8 @@ return {
                 "^گربه$",
                 "^پسرم$",
                 "^امید$",
+                "^ن$",
+                "^امید1$",
                 "^$",
 		}, 
 	run = run,
