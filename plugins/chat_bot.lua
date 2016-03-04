@@ -2,6 +2,8 @@
 local function run(msg)
 if msg.text == "سلام" then
 	return "سلام"
+if msg.text == "امید" then
+	return "با امید لفتی کار داری؟"
 end
 if msg.text == "خوبی؟" then
 	return "مرسی عزیزم تو چطوری؟"
@@ -212,6 +214,7 @@ return {
                 "^سگ$",
                 "^گربه$",
                 "^پسرم$",
+                "^امید$",
                 "^$",
 		}, 
 	run = run,
