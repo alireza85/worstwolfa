@@ -1,6 +1,6 @@
 
 local function run(msg, matches)
-  if msg.text is not sudo(msg) = matches[1]
+  local text = matches[1]
   local b = 1
 
   while b ~= 0 do
