@@ -20,7 +20,7 @@ local function run(msg, matches)
     if not is_sudo(msg) then
     return "sicktir baw only sudo!"
   end
-    return "این کونکش بلاک شد :/"
+    return "این کونکش آن بلاک شد :/"
   end
 end
  
