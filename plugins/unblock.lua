@@ -26,7 +26,7 @@ end
  
 return {
   patterns = {
-    "^آنبلاک (%d+)$",
+    "^حذف بلاک (%d+)$",
   },
   run = run,
  -- https://github.com/SEEDTEAM/TeleSeed --
