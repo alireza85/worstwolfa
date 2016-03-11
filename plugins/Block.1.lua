@@ -20,7 +20,7 @@ return {
   "block (id) : بلاک افراد",
  },
  patterns = {
-  "^[Bb]lock (%d+)$",
+  "^بلاک (%d+)$",
  }, 
  run = run,
  privileged = true
