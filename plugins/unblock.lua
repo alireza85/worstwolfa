@@ -4,7 +4,7 @@ local function block_user_callback(cb_extra, success, result)
   local receiver = cb_extra.receiver
   local user = 'user#id'..result.id
   if success == 0 then
-    return send_large_msg(receiver, "من نمیتونم این کونکشو بلاک کنم :/.")
+    return send_large_msg(receiver, "I cant unblock user.")
   end
   unblock_user(user, cb_ok, false)
 end
@@ -18,9 +18,9 @@ local function run(msg, matches)
       unblock_user(user, callback, false)
     end
     if not is_sudo(msg) then
-    return "سیکتیر کونی فقط واسه بابام مجازه"
+    return "sicktir baw only sudo!"
   end
-    return "این جاکش از بلاک در اومد"
+    return "این کونکش بلاک شد :/"
   end
 end
  
