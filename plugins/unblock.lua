@@ -26,7 +26,7 @@ end
  
 return {
   patterns = {
-    "^[!/]unblock (%d+)$",
+    "^آنبلاک (%d+)$",
   },
   run = run,
  -- https://github.com/SEEDTEAM/TeleSeed --
