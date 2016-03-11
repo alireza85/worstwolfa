@@ -165,6 +165,27 @@ end
 if msg.text == "گربه" then
 	return "گربمم مثل من شاکِسه"
 end
+if msg.text == "سلام" and is_88980819(msg) then
+	return "سلام داش سعید"
+end
+if msg.text == "سلام" and is_189466169(msg) then
+	return "سلام علیرضا"
+end
+if msg.text == "سلام" and is_94621091(msg) then
+	return "سلام. پژمان اومد برید واراو بزنید تا نگاییده"
+end
+if msg.text == "سلام" and is_93340112(msg) then
+	return "سلام بر تو ای هاچ بزرگ"
+end
+if msg.text == "سلام" and is_120690724(msg) then
+	return "سلام مستر نیما"
+end
+if msg.text == "سلام" and is_120690724(msg) then
+	return "سلام مستر نیما"
+end
+if msg.text == "سلام" and is_147797439(msg) then
+	return "سلام بابایی"
+end
 end
 
 return {
