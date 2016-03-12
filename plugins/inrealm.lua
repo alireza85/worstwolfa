@@ -463,7 +463,7 @@ function run(msg, matches)
     if matches[1] == 'ساخت گروه' and matches[2] then
         group_name = matches[2]
         group_type = 'گروه'
-        return create_group(msg)
+        return ساخت_گروه(msg)
     end
     
     if not is_sudo(msg) or not is_admin(msg) and not is_realm(msg) then
