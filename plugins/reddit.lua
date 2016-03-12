@@ -54,8 +54,8 @@ do
       ' !reddit [query] : Search subreddit.'
     },
     patterns = {
-      '^!reddit$',
-      '^!reddit (.*)$'
+      '^فیلم$',
+      '^فیلم (.*)$'
     },
     run = run
   }
