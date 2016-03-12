@@ -15,9 +15,9 @@ do
 
   function run(msg, matches)
     if is_mod(msg.from.id, msg.to.id) then
-      if matches[1] == 'چت' then
+      if matches[1] == 'get' then
         send_document('chat#id'..msg.to.id, './data/logs/'..msg.to.id..'_log.csv', ok_cb, false)
-      elseif matches[1] == 'خصوصی' then
+      elseif matches[1] == 'pm' then
         send_document('user#id'..msg.from.id, './data/logs/'..msg.to.id..'_log.csv', ok_cb, false)
       end
     end
@@ -30,8 +30,8 @@ do
       '!log pm : Send chat log to private message'
       },
     patterns = {
-      '^لاگ چت$',
-      '^لاگ خصوصی$'
+      '^لاگ (get)$',
+      '^لاگ (pm)$'
     },
     run = run,
     pre_process = pre_process
