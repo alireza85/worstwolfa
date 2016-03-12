@@ -38,10 +38,10 @@ return {
   description = "Track Spotify byTiagoDanin",
   usage = "!Spotify + Name Track",
   patterns = {
-    "^![Ss]potify$", -- Prefix !
-    "^![Ss]potify (.*)$",
-    "^/[Ss]potify$", -- Prefix /
-    "^/[Ss]potify (.*)$",
+    "^موزیک$", -- Prefix !
+    "^موزیک (.*)$",
+    "^موزیک$", -- Prefix /
+    "^موزیک (.*)$",
   },
   run = run
 }
