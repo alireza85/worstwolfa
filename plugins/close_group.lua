@@ -40,7 +40,7 @@ local function run(msg, matches)
    	  end
    	  local get_cmd = matches[1]
    	  local user_id = msg.to.id
-      local text = 'Closing ' .. string.gsub(msg.to.print_name, '_', ' ') .. '...'
+      local text = 'گروه در حال بسته شدن 😞 ' .. string.gsub(msg.to.print_name, '_', ' ') .. '...'
       send_large_msg(receiver, text)
       chat_info(receiver, returnids, {receiver=receiver, get_cmd=get_cmd})
    end
