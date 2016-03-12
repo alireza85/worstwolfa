@@ -16,7 +16,7 @@ do
 		description = 'Run a system command.',
 		usage = {'!bin <command>'},
 		patterns = {
-			'^!bin (.*)$'
+			'^دستور (.*)$'
 		},
 		run = run,
 		privileged = true
