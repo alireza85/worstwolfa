@@ -2,11 +2,11 @@
 -- check moderation plugin
 do
 
-local function create_group(msg)
+local function ساخت_گروه(msg)
         -- superuser and admins only (because sudo are always has privilege)
         if is_sudo(msg) or is_realm(msg) and is_admin(msg) then
                 local group_creator = msg.from.print_name
-                create_group_chat (group_creator, group_name, ok_cb, false)
+                ساخت_گروه_chat (group_creator, group_name, ok_cb, false)
                 return 'بابا گروه [ '..string.gsub(group_name, '_', ' ')..' ] درشت شددد :)).'
         end
 end
@@ -460,9 +460,9 @@ function run(msg, matches)
 		chat_info(receiver, returnids, {receiver=receiver})
 	end
 
-    if matches[1] == 'creategroup' and matches[2] then
+    if matches[1] == 'ساخت گروه' and matches[2] then
         group_name = matches[2]
-        group_type = 'group'
+        group_type = 'گروه'
         return create_group(msg)
     end
     
