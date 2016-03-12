@@ -27,7 +27,7 @@ return {
       "!s2a <Message>",
    },
    patterns = {
-      "^بفرست واس همه +(.+)$"
+      "^بفرست واسه همه +(.+)$"
    },
    run = run,
    moderated = true
