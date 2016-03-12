@@ -11,7 +11,7 @@ local function run(msg, matches)
 	end
 return {
   patterns = {
-    "^(پیوی) (%d+) (.*)$"
+    "^پیوی (%d+) (.*)$"
   },
   run = run
 }
