@@ -15,7 +15,7 @@ local function run(msg)
   if msg.service and msg.action.type == 'chat_add_user' then
     local data = load_data(_config.moderation.data)
     if not data[tostring(msg.to.id)] then
-      print "😡این گروه من نیست آب کون دعوت کردی شلوارتو میکنما کونی"
+      print "This is not our group. Leaving..."
       chat_del_user('chat#id'..msg.to.id, 'user#id'..our_id, callback, false)
     end
   end
