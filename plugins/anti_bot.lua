@@ -1,17 +1,17 @@
 
 local function isBotAllowed (userId, chatId)
-  local hash = 'مجاز:ربات:'..chatId..':'..userId
+  local hash = 'anti-bot:allowed:'..chatId..':'..userId
   local banned = redis:get(hash)
   return banned
 end
 
 local function allowBot (userId, chatId)
-  local hash = 'مجاز:ربات:'..chatId..':'..userId
+  local hash = 'anti-bot:allowed:'..chatId..':'..userId
   redis:set(hash, true)
 end
 
 local function disallowBot (userId, chatId)
-  local hash = 'مجاز:ربات:'..chatId..':'..userId
+  local hash = 'anti-bot:allowed:'..chatId..':'..userId
   redis:del(hash)
 end
 
@@ -66,15 +66,15 @@ local function run (msg, matches)
     disableAntiBot(chatId)
     return 'bot can come group is NOT safe'
   end
-  if matches[1] == 'مجاز' then
+  if matches[1] == 'allow' then
     local userId = matches[2]
     allowBot(userId, chatId)
-    return 'ربات '..userId..' مجاز است'
+    return 'Bot '..userId..' allowed'
   end
-  if matches[1] == 'غیرمجاز' then
+  if matches[1] == 'disallow' then
     local userId = matches[2]
     disallowBot(userId, chatId)
-    return 'ربات '..userId..' غیرمجاز است'
+    return 'Bot '..userId..' disallowed'
   end
   if matches[1] == 'chat_add_user' or matches[1] == 'chat_add_user_link' then
     local user = msg.action.user or msg.from
@@ -86,7 +86,7 @@ local function run (msg, matches)
         if not isBotAllowed(userId, chatId) then
           kickUser(userId, chatId)
         else
-          print('ربات مجاز است')
+          print('This bot is allowed')
         end
       end
     end
@@ -102,8 +102,8 @@ return {
     '!antibot disallow <botId>: Disallow <botId> on this chat'
   },
   patterns = {
-    '^(ربات مجاز) (%d+)$',
-    '^(ربات غیرمجاز) (%d+)$',
+    '^!antibot (allow) (%d+)$',
+    '^!antibot (disallow) (%d+)$',
     '^!antibot (enable)$',
     '^!antibot (disable)$',
     '^!!tgservice (chat_add_user)$',
