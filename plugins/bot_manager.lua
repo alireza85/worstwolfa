@@ -119,7 +119,7 @@ local function run(msg,matches)
       		end
       	end
     end
-    if matches[1] == "setbotphoto" then
+    if matches[1] == "تغییر عکس ربات" then
     	redis:set("bot:photo", "waiting")
     	return 'عکس رباتو بفرست بیاد'
     end
@@ -178,7 +178,7 @@ return {
 	"^[!/](block) (%d+)$",
 	"^[!/](markread) (on)$",
 	"^[!/](markread) (off)$",
-	"^[!/](setbotphoto)$",
+	"^(تغییر عکس ربات)$",
 	"%[(photo)%]",
 	"^[!/](contactlist)$",
 	"^[!/](dialoglist)$",
