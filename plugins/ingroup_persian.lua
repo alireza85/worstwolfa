@@ -268,7 +268,7 @@ local function show_group_settingsmod(msg, data, target)
     	welcome = data[tostring(msg.to.id)]['settings']['welcome']
    	end
   local settings = data[tostring(target)]['settings']
-  local text = "تنظيمات گروه:\n????????????\n??قفل نام گروه : "..settings.lock_name.."\n??قفل عکس گروه : "..settings.lock_photo.."\n??قفل اعضا : "..settings.lock_member.."\n??ممنوعيت ارسال لينک : "..lock_link.."\n??حساسيت اسپم : "..NUM_MSG_MAX.."\n??قفل ربات ها : "..bots_protection.."\n??قفل تگ : "..tag.."\n??قفل اينگليسي :"..lock_english.."\n??قفل فحش : "..lock_badw.."\n??TELE PATCH BOT??\n"
+  local text = "تنظيمات گروه:\n????????????????\n>قفل نام گروه : "..settings.lock_name.."\n>قفل عکس گروه : "..settings.lock_photo.."\n>قفل اعضا : "..settings.lock_member.."\n>ممنوعيت ارسال لينک : "..lock_link.."\n>حساسيت اسپم : "..NUM_MSG_MAX.."\n>قفل ربات ها : "..bots_protection.."\n>قفل تگ : "..tag.."\n>قفل اينگليسي :"..lock_english.."\n>قفل فحش : "..lock_badw.."\n
   return text
 end
 
