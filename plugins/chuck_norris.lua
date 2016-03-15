@@ -28,7 +28,7 @@ do
     description = "Get random Chuck Norris jokes.", 
     usage = "!chuck",
     patterns = {
-      "^!chuck$"
+      "^جوک$"
   }, 
   run = run
 }
