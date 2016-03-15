@@ -1,7 +1,7 @@
 do
 
 function run(msg, matches)
-  return '💥TelePatch💥 لیست دستورات ربات'.. VERSION .. [[ 
+  return '🍃🍂TelePatch لیست دستورات ربات🌾🌿'.... [[ 
  
 
 
