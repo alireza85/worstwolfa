@@ -1,4 +1,9 @@
+do
+
+function run(msg, matches)
+  return '💥TelePatch💥 لیست دستورات ربات'.. VERSION .. [[ 
  
+
 
 🌎🌐🌍🌐🌏🌐🌎🌎🌐🌍🌐🌏🌐🌎🌐
 
@@ -106,3 +111,16 @@
 
 
 Designer🎨 : The Worst😍
+]]
+end
+
+return {
+  description = "Shows bot version", 
+  usage = "!version: Shows bot version",
+  patterns = {
+    "^راهنما$"
+  }, 
+  run = run 
+}
+
+end
