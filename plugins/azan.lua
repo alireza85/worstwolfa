@@ -62,7 +62,7 @@ function run(msg, matches)
 	redis:incr(hash)
 	local receiver	= get_receiver(msg)
 	local city = matches[1]
-	if matches[1] == 'praytime' then
+	if matches[1] == 'اذان' then
 	city = 'Tehran'
 	end
 	local lat,lng,url	= get_staticmap(city)
@@ -78,7 +78,7 @@ function run(msg, matches)
 	  text = text..'\nغروب آفتاب: '..data.Sunset
 	  text = text..'\nاذان مغرب: '..data.Maghrib
 	  text = text..'\nعشاء : '..data.Isha
-	  text = text..'\n\n@GPMod Team'
+	  text = text..'\n\n@💋dokhaniat💋'
 	if string.match(text, '0') then text = string.gsub(text, '0', '۰') end
 	if string.match(text, '1') then text = string.gsub(text, '1', '۱') end
 	if string.match(text, '2') then text = string.gsub(text, '2', '۲') end
@@ -93,7 +93,7 @@ function run(msg, matches)
 end
 
 return {
-  patterns = {"^[/!][Pp]raytime (.*)$","^[/!](praytime)$"}, 
+  patterns = {"^(اذان) (.*)$","^[/!](praytime)$"}, 
   run = run 
 }
 
