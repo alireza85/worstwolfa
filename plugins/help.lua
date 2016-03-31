@@ -1,7 +1,7 @@
 do
 
 function run(msg, matches)
-  return '🍃🍂TelePatch لیست دستورات ربات🌾🌿'..VERSION.. [[ 
+  return '🐍لیست دستورات ربات TeleSnake🐍'..VERSION.. [[ 
  
 
 
@@ -84,7 +84,7 @@ function run(msg, matches)
 
 
 کنترول ربات
-1- تله پتچ ✅
+1- تله اسنیک✅
 2- سی پی یو 👾
 3- ورژن 👽
 4- ساپورت 🏁
