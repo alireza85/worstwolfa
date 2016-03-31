@@ -3,13 +3,13 @@ do
 function run(msg, matches)
   return 'Telegram Bot '.. VERSION .. [[ 
  
-  Developer : @HanozamHamonam,@WoesDo
+  Developer : @Simple_And_Vague,@xX_Im_single_Xx
   
   channel : @SmokeUnion
   
   open git : https://github.com/***/***TelePatch.git
   
-  ♻️TelePatch♻️ 4
+  ♻TeleSnake♻️ 4
   
   All rights reserved.]]
 end
