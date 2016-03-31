@@ -9,13 +9,13 @@ function run(msg, matches)
   
   open git : https://github.com/solomon1*****/***TelePatch.git
   
-  ♻️TelePatch♻️ PowerFull
+  ♻️Telesnake♻️ PowerFull
   
  We protect your group to hackers or spammer
  
  Our Admins : 
  
- @WoesDo , @HanozamHamonam
+@xX_Im_single_Xx , @Simple_And_Vague
  
  special thanks to :
  
@@ -31,10 +31,10 @@ function run(msg, matches)
 end
 
 return {
-  description = "Shows bot telepatch", 
-  usage = "تله پتچ: Shows bot telepatch",
+  description = "Shows bot telesnake", 
+  usage = " تله اسنیک: Shows bot telesnake",
   patterns = {
-    "^تله پتچ$"
+    "^تله اسنیک$"
   }, 
   run = run 
 }
